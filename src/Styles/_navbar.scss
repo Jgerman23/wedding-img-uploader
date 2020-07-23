@@ -1,0 +1,43 @@
+@import "./config";
+
+.nav-container {
+	font-family: "Megrim", cursive;
+}
+
+.nav-bar {
+	height: 50px;
+	background-color: $primary-color;
+	color: $white;
+	@include flexBox;
+	span {
+		font-size: 2rem;
+	}
+}
+
+.nav-links {
+	height: 50px;
+	background-color: $primary-color;
+	color: $white;
+	ul {
+		margin: 0;
+		list-style: none;
+		@include flexBox;
+		padding: 0.5rem;
+	}
+	ul li {
+		padding: 0 0.5rem;
+		font-size: 1.2rem;
+		position: relative;
+		&::before {
+			@include animateUnderline;
+		}
+		&:hover::before {
+			visibility: visible;
+            transform: scaleX(1);
+        }
+        &:hover {
+            color: $hover-color;
+            transition: $animate;
+        }
+	}
+}
