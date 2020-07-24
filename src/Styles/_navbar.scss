@@ -1,11 +1,16 @@
 @import "./config";
 
 .nav-container {
-	font-family: "Megrim", cursive;
+	.nav-bar {
+		font-family: $primary-font;
+	}
+	.nav-links {
+		font-family: $secondary-font;
+	}
 }
 
 .nav-bar {
-	height: 50px;
+	height: 80px;
 	background-color: $primary-color;
 	color: $white;
 	@include flexBox;
@@ -25,19 +30,31 @@
 		padding: 0.5rem;
 	}
 	ul li {
+		&:nth-child(2) {
+			&::first-letter {
+				font-family: $first-letter;
+			}
+		}
+	}
+	ul li a {
+		color: $white;
 		padding: 0 0.5rem;
 		font-size: 1.2rem;
 		position: relative;
+		text-decoration: none;
 		&::before {
 			@include animateUnderline;
 		}
 		&:hover::before {
 			visibility: visible;
-            transform: scaleX(1);
-        }
-        &:hover {
-            color: $hover-color;
-            transition: $animate;
-        }
+			transform: scaleX(1);
+		}
+		&:hover {
+			color: $hover-color;
+			transition: $animate;
+		}
+	}
+	.is-active {
+		color: $hover-color;
 	}
 }

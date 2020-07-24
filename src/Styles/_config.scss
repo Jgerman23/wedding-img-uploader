@@ -2,6 +2,9 @@ $primary-color: #202124;
 $white: whitesmoke;
 $hover-color: #d0818d;
 $animate: all 0.3s ease-in-out 0s;
+$primary-font: "Megrim", cursive;
+$secondary-font: "Quicksand", sans-serif;
+$first-letter: "Quattrocento Sans", sans-serif;
 
 @mixin flexBox {
 	display: flex;
@@ -24,9 +27,9 @@ $animate: all 0.3s ease-in-out 0s;
 }
 
 @mixin curve {
-    height: 150px;
-    border-bottom: 4px solid #d0beaf;
-    border-bottom-left-radius: 50% 40%;
-    border-bottom-right-radius: 50% 40%;
-    text-align: center;
+	height: 150px;
+	border-bottom: 4px solid #d0beaf;
+	border-bottom-left-radius: 50% 40%;
+	border-bottom-right-radius: 50% 40%;
+	text-align: center;
 }

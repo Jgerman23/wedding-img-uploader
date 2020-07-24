@@ -1,12 +1,19 @@
 @import "./navbar";
 @import "./header";
+@import "./home";
+@import "./photos";
 
-html, body {
-    margin: 0;
-    height: 2000px;
-    background-image: url(../Img/iStock-177492461.jpg);
-    background-attachment: fixed;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+html,
+body {
+	margin: 0;
+	height: 2000px;
+	background-image: url(../Img/background-img.png);
+	background-attachment: fixed;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+.main-body {
+	max-width: 768px;
 }

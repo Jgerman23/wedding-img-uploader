@@ -5,7 +5,8 @@
 }
 
 .mobile-img {
-	display: none;
+	margin-top: 50px;
+	width: 100%;
 }
 
 header {
@@ -13,42 +14,9 @@ header {
 	position: relative;
 }
 
-.images {
-	position: absolute;
-	top: 110px;
-	ul {
-		@include flexBox;
-		margin: 0;
-		padding: 0;
-		list-style: none;
-		li {
-			padding: 0 1rem;
-		}
-		li:first-child{
-			position: relative;
-			bottom: 28px;
-		}
-		li:nth-child(2) {
-			position: relative;
-			bottom: 8px;
-		}
-		li:nth-child(4) {
-			position: relative;
-			bottom: 8px;
-		}
-		li:last-child {
-			position: relative;
-			bottom: 28px;
-		}
-		img {
-			width: 100%;
-		}
-	}
-}
-
 @media (max-width: 768.98px) {
-
-	header, .images {
+	header,
+	.images {
 		display: none;
 	}
 
