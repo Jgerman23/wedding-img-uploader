@@ -1,8 +1,26 @@
 @import "./config";
 
-.body {
-    padding: 0 300px;
-	position: relative;
-	text-align: center;
-	max-width: 768px;
+$special-font: "Mrs Saint Delafield", cursive;
+
+.special-font {
+	font-family: $special-font;
+	font-size: 60px;
+	margin: 10px 0 5px 0;
+}
+
+.body-text {
+	font-family: $secondary-font;
+	font-size: 24px;
+}
+
+@media (max-width: 576.98px) {
+	.special-font {
+		font-size: 48px;
+		padding: 1rem;
+		margin-left: 0;
+	}
+
+	.body-text {
+		font-size: 18px;
+	}
 }

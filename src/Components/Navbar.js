@@ -6,6 +6,7 @@ const Navbar = () => {
 	return (
 		<div className="nav-container">
 			<nav className="nav-bar">
+				<br />
 				<Fade top delay={500}>
 					<span>GABY & JUSTIN'S WEDDING</span>
 				</Fade>
@@ -14,13 +15,26 @@ const Navbar = () => {
 				<Fade bottom delay={600}>
 					<ul>
 						<li>
-							<NavLink exact={true} activeClassName="is-active" to="/">Home</NavLink>
+							<NavLink
+								exact={true}
+								activeClassName="is-active"
+								to="/"
+							>
+								Home
+							</NavLink>
 						</li>
 						<li>
-							<NavLink activeClassName="is-active" to="/photos">Gallery</NavLink>
+							<NavLink activeClassName="is-active" to="/photos">
+								Gallery
+							</NavLink>
 						</li>
 						<li>
-							<NavLink activeClassName="is-active" to="/wordsofwisdom">Words of Wisdom</NavLink>
+							<NavLink
+								activeClassName="is-active"
+								to="/wordsofwisdom"
+							>
+								Words of Wisdom
+							</NavLink>
 						</li>
 					</ul>
 				</Fade>

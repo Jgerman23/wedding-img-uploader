@@ -1,5 +1,9 @@
 @import "./config";
 
+.card-title {
+	font-family: $primary-font;
+}
+
 .btn-container {
 	display: flex;
 	align-items: flex-start;
@@ -11,9 +15,9 @@ input[type="file"] {
 	position: absolute;
 	z-index: -1;
 	top: 10px;
-	left: 2px;
+	left: 1px;
 	font-size: 14px;
-	color: #b8b8b8;
+	color: $white;
 	box-sizing: border-box;
 }
 .button-wrapper {
@@ -21,62 +25,47 @@ input[type="file"] {
 	z-index: 2000;
 }
 .label-btn {
+	left: -1px;
 	position: relative;
 	display: inline-block;
-	padding: 12px 8px;
+	padding: 8px 10px;
 	cursor: pointer;
 	border-radius: 5px;
 	background-color: #8ebf42;
 	font-size: 16px;
-	font-weight: bold;
 	color: #fff;
+	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14),
+		0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
 }
 
-.card-title {
-	font-family: $primary-font;
+.submit-container {
+	text-align: center;
+	padding: 1rem;
+	.btn {
+		font-size: 16px;
+		background-color: #8ebf42;
+		border-radius: 5px !important;
+	}
+}
+
+progress {
+	margin-top: 1rem;
+	padding: 0.8rem;
+	width: 100%;
+}
+
+progress[value]::-webkit-progress-bar {
+	background-color: red;
 }
 
 .gallery-items {
-	position: relative;
 	display: flex;
 	flex-wrap: wrap;
 	padding: 0 4px;
 }
 
-.gallery-items img {
-	position: relative;
+.gallery-items li {
 	flex: 50%;
-	width: 100%;
-	max-width: 50%;
+	max-width: 25%;
 	padding: 10px;
 }
-
-// .gallery {
-// 	display: flex;
-// 	flex-wrap: wrap;
-// 	padding: 0 4px;
-// }
-
-// .gallery-items {
-// 	flex: 25%;
-// 	max-width: 25%;
-// 	padding: 0 4px;
-// }
-
-// .gallery-items img {
-// 	width: 100%;
-// 	padding: 10px;
-// }
-
-// @media screen and (max-width: 800px) {
-// 	.gallery-items {
-// 		flex: 50%;
-// 		max-width: 50%;
-// 	}
-// }
-// @media screen and (max-width: 600px) {
-// 	.gallery-items {
-// 		flex: 100%;
-// 		max-width: 100%;
-// 	}
-// }
