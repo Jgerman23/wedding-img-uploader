@@ -1,11 +1,14 @@
 @import "./config";
 
-$special-font: "Mrs Saint Delafield", cursive;
+$special-font: "Euphoria Script", cursive;
 
 .special-font {
 	font-family: $special-font;
 	font-size: 60px;
 	margin: 10px 0 5px 0;
+	span {
+		font-family: $special-font;
+	}
 }
 
 .body-text {

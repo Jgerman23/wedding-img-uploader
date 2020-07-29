@@ -2,16 +2,18 @@
 @import "./header";
 @import "./home";
 @import "./photos";
+@import "./footer";
 
 html,
 body {
 	margin: 0;
-    height: 2000px;
     background-color: #F7F7F7;
 	background-attachment: fixed;
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
+	height: 100vh;
+	position: relative;
 }
 
 .main-body {

@@ -1,8 +1,11 @@
 import React, { Component } from "react";
 import Zoom from "react-reveal/Zoom";
 import Fade from "react-reveal/Fade";
+import Slide from "react-reveal/Slide";
 import firebase, { storage } from "../firebase";
 import Container from "../Components/Container";
+import "materialize-css";
+import { TextInput, ProgressBar } from "react-materialize";
 
 class Photos extends Component {
 	constructor() {
@@ -17,7 +20,7 @@ class Photos extends Component {
 		this.handleSubmit = this.handleSubmit.bind(this);
 	}
 
-	componentDidMount() {
+	componentWillMount() {
 		const itemsRef = firebase.database().ref("items");
 		itemsRef.on("value", (snapshot) => {
 			let items = snapshot.val();
@@ -103,15 +106,9 @@ class Photos extends Component {
 									<div className="card-action">
 										<div className="btn-container">
 											<div className="button-wrapper">
-												<label
-													className="label-btn"
-													htmlFor="upload"
-												>
-													<i className="fas fa-image"></i>
-													&nbsp; IMAGE
-												</label>
-												<input
-													id="upload"
+												<TextInput
+													id="TextInput-4"
+													label="Choose"
 													type="file"
 													onChange={
 														this.handleImgChange
@@ -122,7 +119,7 @@ class Photos extends Component {
 									</div>
 									<div className="submit-container">
 										<button
-											className="btn"
+											className="submit-btn"
 											onClick={this.handleSubmit}
 										>
 											<i className="fas fa-upload"></i>
@@ -132,12 +129,10 @@ class Photos extends Component {
 								</div>
 							</Zoom>
 						</div>
-						<div className="col sm12 m12 l7">
-							<progress
-								className="progres-bar"
-								value={this.state.progress}
-								maxx="100"
-							/>
+						<div className="col s12 m12 l7">
+							<Slide right big>
+								<ProgressBar progress={this.state.progress} />
+							</Slide>
 						</div>
 					</div>
 				</div>
@@ -149,7 +144,7 @@ class Photos extends Component {
 								{this.state.items.map((item) => {
 									return (
 										<li key={item.id}>
-											<Fade bottom delay={600}>
+											<Fade bottom delay={300}>
 												<img
 													className=""
 													src={item.url}

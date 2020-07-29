@@ -1,5 +1,5 @@
 $primary-color: #202124;
-$white: #F7F7F7;
+$white: #f7f7f7;
 $hover-color: #d0818d;
 $animate: all 0.3s ease-in-out 0s;
 $primary-font: "Megrim", cursive;
@@ -20,7 +20,7 @@ $first-letter: "Quattrocento Sans", sans-serif;
 	height: 2px;
 	bottom: 0;
 	left: 0;
-	background-color: $hover-color;
+	background: linear-gradient(#caa472, #e4c295);
 	visibility: hidden;
 	transform: scaleX(0);
 	transition: $animate;

@@ -1,0 +1,19 @@
+@import "./config";
+
+.page-footer {
+    background-color: $hover-color;
+    position: sticky;
+    width: 100%;
+    bottom: 0;
+    padding: 1rem;
+}
+
+.developed-by {
+    a {
+        color: white;
+        text-decoration: underline;
+        &:hover {
+            color: #202124;
+        }
+    }
+}

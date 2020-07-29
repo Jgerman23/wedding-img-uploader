@@ -7,12 +7,12 @@ const Navbar = () => {
 		<div className="nav-container">
 			<nav className="nav-bar">
 				<br />
-				<Fade top delay={500}>
+				<Fade top delay={300}>
 					<span>GABY & JUSTIN'S WEDDING</span>
 				</Fade>
 			</nav>
 			<div className="nav-links">
-				<Fade bottom delay={600}>
+				<Fade bottom delay={400}>
 					<ul>
 						<li>
 							<NavLink

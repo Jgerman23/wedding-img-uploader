@@ -37,7 +37,10 @@
 		}
 	}
 	ul li a {
-		color: $white;
+		// color: $white;
+		background: -webkit-linear-gradient(#D0818D, #CAA472);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
 		padding: 0 0.5rem;
 		font-size: 1.2rem;
 		position: relative;
