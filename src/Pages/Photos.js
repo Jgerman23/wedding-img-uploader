@@ -130,9 +130,9 @@ class Photos extends Component {
 							</Zoom>
 						</div>
 						<div className="col s12 m12 l7">
-							<Slide right>
+							<Fade top>
 								<ProgressBar progress={this.state.progress} />
-							</Slide>
+							</Fade>
 						</div>
 					</div>
 				</div>
