@@ -20,7 +20,7 @@ $first-letter: "Quattrocento Sans", sans-serif;
 	height: 2px;
 	bottom: 0;
 	left: 0;
-	background: linear-gradient(#caa472, #e4c295);
+	background: $hover-color;
 	visibility: hidden;
 	transform: scaleX(0);
 	transition: $animate;
