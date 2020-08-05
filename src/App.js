@@ -21,7 +21,7 @@ function App() {
 				<Route path="/photos" component={Photos} />
 				<Route path="/wordsofwisdom" component={WordsOfWisdom} />
 			</Switch>
-			{/* <Footer /> */}
+			<Footer />
 		</div>
 	);
 }

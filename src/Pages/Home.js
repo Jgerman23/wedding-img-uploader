@@ -1,5 +1,6 @@
 import React from "react";
 import Fade from "react-reveal/Fade";
+import Zoom from "react-reveal/Zoom";
 import Container from "../Components/Container";
 import Logo from "../Img/logo.svg";
 
@@ -7,15 +8,15 @@ const Home = () => {
 	return (
 		<div>
 			<Container>
-				<Fade top delay={200}>
+				<Zoom delay={200}>
 					<div style={{ textAlign: "center", marginTop: "2rem" }}>
 						<img src={Logo} alt="" style={{ width: "45%" }} />
 					</div>
-				</Fade>
-				<Fade bottom delay={200}>
+				</Zoom>
+				<Fade bottom>
 					<p className="special-font">Dear friends and famliy,</p>
 				</Fade>
-				<Fade bottom delay={200}>
+				<Fade bottom>
 					<p className="body-text">
 						We announce with great joy that on the morning of August
 						8th, we became husband and wife in an intimate ceremony.
@@ -23,7 +24,7 @@ const Home = () => {
 						lives!
 					</p>
 				</Fade>
-				<Fade bottom delay={200}>
+				<Fade bottom>
 					<p className="body-text">
 						Thank you for all of your love and support that have
 						brought us to this wonderful day. Although we would've
@@ -31,7 +32,7 @@ const Home = () => {
 						you were in our thoughts and hearts.
 					</p>
 				</Fade>
-				<Fade bottom delay={200}>
+				<Fade bottom>
 					<div className="right-align" style={{marginBottom: "100px"}}>
 						<p className="special-font">
 							With Love, <br />

@@ -29,7 +29,6 @@ const WordsOfWisdom = () => {
 			.orderBy("createdAt", "desc")
 			.onSnapshot((snapshot) => {
 				setWow(snapshot.docs.map((doc) => doc.data()));
-				console.log(snapshot.docs.map((doc) => doc.data()));
 			});
 	}, []);
 
@@ -40,7 +39,6 @@ const WordsOfWisdom = () => {
 
 	const handleNameChange = (event) => {
 		const text = event.target.value;
-		console.log(text);
 		setName(text);
 	};
 
@@ -61,7 +59,7 @@ const WordsOfWisdom = () => {
 		<div>
 			<Container>
 				<div className="wow-input">
-					<Zoom delay={200}>
+					<Zoom>
 						<TextareaAutosize
 							aria-label="minimum height"
 							rowsMin={6}
@@ -79,7 +77,7 @@ const WordsOfWisdom = () => {
 					</Zoom>
 				</div>
 				<div className="submit-btn-container center">
-					<Zoom delay={300}>
+					<Zoom>
 						<button
 							className="waves-effect waves-light btn-large"
 							onClick={handleSubmit}
@@ -100,7 +98,7 @@ const WordsOfWisdom = () => {
 									layout
 									key={wow.createdAt}
 								>
-									<Fade bottom delay={200}>
+									<Fade bottom>
 										<Card>
 											<CardContent>
 												<p className="wow-text">

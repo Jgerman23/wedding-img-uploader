@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Progressbar from "../Components/Progressbar";
 import Zoom from "react-reveal/Zoom";
+import Container from "../Components/Container";
 
 const UploadForm = () => {
 	const [file, setFile] = useState(null);
@@ -21,19 +22,21 @@ const UploadForm = () => {
 	};
 
 	return (
-		<form>
-			<Zoom delay={500}>
-				<label>
-					<input type="file" onChange={changeImgHandler} />
-					<i className="medium material-icons">add_circle_outline</i>
-				</label>
-			</Zoom>
-			<div className="output">
-				{error && <div className="error">{error}</div>}
-				{file && <div>{file.name}</div>}
-				{file && <Progressbar file={file} setFile={setFile} />}
-			</div>
-		</form>
+		<Container>
+			<form>
+				<Zoom delay={500}>
+					<label>
+						<input type="file" onChange={changeImgHandler} />
+						<i className="medium material-icons">add_circle_outline</i>
+					</label>
+				</Zoom>
+				<div className="output">
+					{error && <div className="error">{error}</div>}
+					{file && <div>{file.name}</div>}
+					{file && <Progressbar file={file} setFile={setFile} />}
+				</div>
+			</form>
+		</Container>
 	);
 };
 
