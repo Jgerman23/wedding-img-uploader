@@ -9,18 +9,15 @@ import Footer from "./Components/Footer";
 
 function App() {
 	return (
-		<div
-			style={{
-				position: "relative",
-				minHeight: "100vh",
-			}}
-		>
-			<Navbar />
-			<Switch>
-				<Route exact path="/" component={Home} />
-				<Route path="/photos" component={Photos} />
-				<Route path="/wordsofwisdom" component={WordsOfWisdom} />
-			</Switch>
+		<div>
+			<div style={{marginBottom: "150px"}}>
+				<Navbar />
+				<Switch>
+					<Route exact path="/" component={Home} />
+					<Route path="/photos" component={Photos} />
+					<Route path="/wordsofwisdom" component={WordsOfWisdom} />
+				</Switch>
+			</div>
 			<Footer />
 		</div>
 	);
