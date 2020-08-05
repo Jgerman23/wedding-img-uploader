@@ -86,9 +86,7 @@ const WordsOfWisdom = () => {
 						</button>
 					</Zoom>
 				</div>
-			</Container>
-			<br />
-			<Container>
+				<br />
 				<div className="wow-grid">
 					{wows &&
 						wows.map((wow) => {
