@@ -10,9 +10,9 @@ const Photos = () => {
 	const [selectedImg, setSelectedImg] = useState(null);
 	return (
 		<div>
-			<Title />
-			<UploadForm />
 			<Container>
+				<Title />
+				<UploadForm />
 				<ImgGrid setSelectedImg={setSelectedImg} />
 				{selectedImg && (
 					<Modal

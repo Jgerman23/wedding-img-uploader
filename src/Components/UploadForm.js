@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import Progressbar from "../Components/Progressbar";
 import Zoom from "react-reveal/Zoom";
-import Container from "../Components/Container";
 
 const UploadForm = () => {
 	const [file, setFile] = useState(null);
@@ -22,7 +21,6 @@ const UploadForm = () => {
 	};
 
 	return (
-		<Container>
 			<form>
 				<Zoom delay={500}>
 					<label>
@@ -36,7 +34,6 @@ const UploadForm = () => {
 					{file && <Progressbar file={file} setFile={setFile} />}
 				</div>
 			</form>
-		</Container>
 	);
 };
 
