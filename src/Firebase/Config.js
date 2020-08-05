@@ -1,9 +1,9 @@
-import * as firebase from "firebase/app";
+import * as firebase from "firebase";
 import "firebase/storage";
 import "firebase/firestore";
 
 // Your web app's Firebase configuration
-var firebaseConfig = {
+const firebaseConfig = {
 	apiKey: "AIzaSyAp89b25MsYeMkw7UbJ9ZJuwcHXSw0J_7M",
 	authDomain: "wedding-site-5b751.firebaseapp.com",
 	databaseURL: "https://wedding-site-5b751.firebaseio.com",
@@ -14,23 +14,12 @@ var firebaseConfig = {
 	measurementId: "G-X7R85Z7DYW",
 };
 
-let firebaseCache;
-
-export const getFirebase = () => {
-	if (firebaseCache) {
-		return firebaseCache;
-	}
-
-	firebaseCache = firebase;
-	return firebase;
-};
-
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
 const projectStorage = firebase.storage();
 const projectFirestore = firebase.firestore();
 const timestamp = firebase.firestore.FieldValue.serverTimestamp;
+const database = firebase.database().ref();
 
-export { projectFirestore, projectStorage, timestamp };
-export default firebase;
+export { projectFirestore, projectStorage, timestamp, database };

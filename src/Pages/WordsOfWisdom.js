@@ -1,30 +1,121 @@
-import React, { useState } from "react";
-import { Textarea, Icon } from "react-materialize";
+import React, { useState, useEffect } from "react";
 import Container from "../Components/Container";
+import { projectFirestore, timestamp } from "../Firebase/Config";
+import { motion } from "framer-motion";
+import Card from "@material-ui/core/Card";
+import CardContent from "@material-ui/core/CardContent";
+import TextareaAutosize from "@material-ui/core/TextareaAutosize";
+import TextField from "@material-ui/core/TextField";
+import { makeStyles } from "@material-ui/core";
+import Fade from "react-reveal/Fade";
+import Zoom from "react-reveal/Zoom";
 
 const WordsOfWisdom = () => {
-	const [post, setPost] = useState(null);
+	const [wows, setWow] = useState([]);
+	const [input, setInput] = useState("");
+	const [name, setName] = useState("");
 
-	const handleChange = (e) => {
-		let text = e.target.value;
-		setPost(text);
+	const useStyles = makeStyles({
+		root: {
+			width: "100%",
+			borderRadius: "5px",
+		},
+	});
+	const classes = useStyles();
+
+	useEffect(() => {
+		projectFirestore
+			.collection("wordsOfWisdom")
+			.orderBy("createdAt", "desc")
+			.onSnapshot((snapshot) => {
+				setWow(snapshot.docs.map((doc) => doc.data()));
+				console.log(snapshot.docs.map((doc) => doc.data()));
+			});
+	}, []);
+
+	const handleWowChange = (event) => {
+		const text = event.target.value;
+		setInput(text);
 	};
 
-	const handleSubmit = (e) => {
-		console.log(post);
-		setPost(null);
+	const handleNameChange = (event) => {
+		const text = event.target.value;
+		console.log(text);
+		setName(text);
+	};
+
+	const handleSubmit = (event) => {
+		event.preventDefault();
+		const createdAt = timestamp();
+		setTimeout(() => {
+			projectFirestore.collection("wordsOfWisdom").add({
+				wow: input,
+				name: name,
+				createdAt,
+			});
+		}, 500);
+		setInput("");
+		setName("");
 	};
 	return (
-		<div className="container">
-			<h1>Words of Wisdom</h1>
+		<div>
 			<Container>
-				<Textarea
-					icon={<Icon>mode_edit</Icon>}
-					label="Words of Wisdom"
-					onChange={handleChange}
-				/>
-
-				<button className="btn" onClick={handleSubmit}>Submit</button>
+				<div className="wow-input">
+					<Zoom delay={200}>
+						<TextareaAutosize
+							aria-label="minimum height"
+							rowsMin={6}
+							placeholder="Words of Wisdom"
+							className={classes.root}
+							onChange={handleWowChange}
+							value={input}
+						/>
+						<TextField
+							id="standard-basic"
+							label="Name"
+							onChange={handleNameChange}
+							value={name}
+						/>
+					</Zoom>
+				</div>
+				<div className="submit-btn-container center">
+					<Zoom delay={300}>
+						<button
+							className="waves-effect waves-light btn-large"
+							onClick={handleSubmit}
+						>
+							<i className="material-icons right">send</i>Submit
+						</button>
+					</Zoom>
+				</div>
+			</Container>
+			<br />
+			<Container>
+				<div className="wow-grid">
+					{wows &&
+						wows.map((wow) => {
+							return (
+								<motion.div
+									className="wow-wrap"
+									layout
+									key={wow.createdAt}
+								>
+									<Fade bottom delay={200}>
+										<Card>
+											<CardContent>
+												<p className="wow-text">
+													{wow.wow}
+												</p>
+											</CardContent>
+											<div className="wow-name right-align">
+												<p> - {wow.name}</p>
+											</div>
+										</Card>
+									</Fade>
+								</motion.div>
+							);
+						})}
+				</div>
 			</Container>
 		</div>
 	);

@@ -10,7 +10,7 @@ const ImgGrid = ({ setSelectedImg }) => {
 			{docs &&
 				docs.map((doc) => (
 					<motion.div
-						className="img-wrap"
+						className="img-wrap hoverable"
 						key={doc.id}
 						layout
 						whileHover={{ opacity: 1 }}

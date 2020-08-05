@@ -22,7 +22,7 @@ const UploadForm = () => {
 
 	return (
 		<form>
-			<Zoom delay={700}>
+			<Zoom delay={500}>
 				<label>
 					<input type="file" onChange={changeImgHandler} />
 					<i className="medium material-icons">add_circle_outline</i>

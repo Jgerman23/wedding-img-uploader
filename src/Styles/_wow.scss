@@ -1,0 +1,81 @@
+@import "./config";
+
+.wow-input {
+    padding: 1rem;
+    margin-top: 60px;
+}
+
+textarea:focus {
+	outline: $hover-color auto 1px !important;
+}
+
+.MuiFormLabel-root.Mui-focused {
+	color: $hover-color !important;
+}
+
+.MuiInput-input {
+	margin: 1px 0 !important;
+}
+
+.MuiInput-underline:before {
+	border-bottom: none !important;
+}
+
+.MuiInput-underline:after {
+	border-bottom: 2px solid $hover-color !important;
+}
+
+.MuiInput-underline:hover:not(.Mui-disabled):before {
+	border-bottom: none !important;
+}
+
+.submit-btn-container {
+    padding: 1rem;
+}
+
+.btn-large {
+	background-color: $primary-color;
+	&:hover {
+		background-color: $hover-color;
+	}
+	&:focus {
+		background-color: $hover-color;
+	}
+}
+
+.wow-grid {
+	margin: 20px auto;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-gap: 40px;
+}
+
+.MuiCard-root {
+	min-width: 100%;
+	min-height: 100%;
+	overflow: scroll;
+	.wow-text {
+		font-size: 20px;
+		font-family: $secondary-font;
+		&::first-letter {
+			text-transform: uppercase;
+			color: $hover-color;
+			font-size: 50px;
+			font-family: $special-font;
+			line-height: 10px;
+		}
+	}
+}
+
+.wow-name {
+	padding: 0 16px;
+	font-size: 18px;
+	font-family: $secondary-font;
+}
+
+@media (max-width: 575.98px) {
+	.wow-grid {
+		grid-template-columns: 1fr;
+		grid-gap: 20px;
+	}
+}
