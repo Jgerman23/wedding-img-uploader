@@ -6,7 +6,7 @@ const Footer = () => {
 			<footer className="page-footer center">
 				<div className="container">
 					<div className="developed-by">
-						Developed with{" "}
+						&copy; 2020 - Developed with{" "}
 						<span role="img" aria-label="heart">
 							♥️
 						</span>{" "}
@@ -19,7 +19,6 @@ const Footer = () => {
 							Justin German
 						</a>
 					</div>
-					<div className="footer-content">&copy; 2020</div>
 				</div>
 			</footer>
 		</div>
