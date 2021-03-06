@@ -9,9 +9,20 @@ html,
 body {
 	margin: 0;
 	background-color: #f7f7f7;
+	position: relative;
+	height: 100%;
+}
+
+#root {
+	min-height: 100vh;
+	position: relative;
+	display: block;
+	padding-bottom: 62px;
+	transition: 0.3s ease-in-out;
 }
 
 .main-body {
 	max-width: 768px;
-	margin-bottom: 200px;
+	margin-top: 30px;
+	margin-bottom: 30px;
 }

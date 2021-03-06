@@ -1,12 +1,15 @@
 @import "./config";
 
 .page-footer {
-    position: fixed;
+    position: absolute;
     background-color: $hover-color;
+    height: 62px;
     width: 100%;
     bottom: 0;
     left: 0;
-    padding: 1rem;
+    right: 0;
+    transition: 0.3s ease-in-out;
+    padding: 20px;
 }
 
 .developed-by {

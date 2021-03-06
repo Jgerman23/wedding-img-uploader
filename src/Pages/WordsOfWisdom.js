@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import Container from "../Components/Container";
 import { projectFirestore, timestamp } from "../Firebase/Config";
 import { motion } from "framer-motion";
 import Card from "@material-ui/core/Card";
@@ -56,64 +55,62 @@ const WordsOfWisdom = () => {
 		setName("");
 	};
 	return (
-		<div>
-			<Container>
-				<div className="wow-input">
-					<Zoom>
-						<TextareaAutosize
-							aria-label="minimum height"
-							rowsMin={6}
-							placeholder="Words of Wisdom"
-							className={classes.root}
-							onChange={handleWowChange}
-							value={input}
-						/>
-						<TextField
-							id="standard-basic"
-							label="Name"
-							onChange={handleNameChange}
-							value={name}
-						/>
-					</Zoom>
-				</div>
-				<div className="submit-btn-container center">
-					<Zoom>
-						<button
-							className="waves-effect waves-light btn-large"
-							onClick={handleSubmit}
-						>
-							<i className="material-icons right">send</i>Submit
-						</button>
-					</Zoom>
-				</div>
-				<br />
-				<div className="wow-grid">
-					{wows &&
-						wows.map((wow) => {
-							return (
-								<motion.div
-									className="wow-wrap"
-									layout
-									key={wow.createdAt}
-								>
-									<Fade bottom>
-										<Card>
-											<CardContent>
-												<p className="wow-text">
-													{wow.wow}
-												</p>
-											</CardContent>
-											<div className="wow-name right-align">
-												<p> - {wow.name}</p>
-											</div>
-										</Card>
-									</Fade>
-								</motion.div>
-							);
-						})}
-				</div>
-			</Container>
-		</div>
+				<>
+					<div className="wow-input">
+						<Zoom>
+							<TextareaAutosize
+								aria-label="minimum height"
+								rowsMin={6}
+								placeholder="Words of Wisdom"
+								className={classes.root}
+								onChange={handleWowChange}
+								value={input}
+							/>
+							<TextField
+								id="standard-basic"
+								label="Name"
+								onChange={handleNameChange}
+								value={name}
+							/>
+						</Zoom>
+					</div>
+					<div className="submit-btn-container center">
+						<Zoom>
+							<button
+								className="waves-effect waves-light btn-large"
+								onClick={handleSubmit}
+							>
+								<i className="material-icons right">send</i>Submit
+							</button>
+						</Zoom>
+					</div>
+					<br />
+					<div className="wow-grid">
+						{wows &&
+							wows.map((wow) => {
+								return (
+									<motion.div
+										className="wow-wrap"
+										layout
+										key={wow.createdAt}
+									>
+										<Fade bottom>
+											<Card>
+												<CardContent>
+													<p className="wow-text">
+														{wow.wow}
+													</p>
+												</CardContent>
+												<div className="wow-name right-align">
+													<p> - {wow.name}</p>
+												</div>
+											</Card>
+										</Fade>
+									</motion.div>
+								);
+							})}
+					</div>
+				</>
 	);
 };
 
